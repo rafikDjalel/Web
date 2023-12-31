@@ -1,0 +1,56 @@
+﻿@model Avion
+
+
+
+
+<form method="post">
+    <input asp-for="Numavion" hidden /> 
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Suprimer  Un Avion</h2>
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Numavion" class="p-0"></label>
+            <input asp-for="Numavion" class="form-control" />
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Nomavion" class="p-0"></label>
+            <input asp-for="Nomavion" disabled class="form-control" />
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Capacite" class="p-0"></label>
+            <input asp-for="Capacite" disabled d class="form-control" />
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Localisation" class="p-0"></label>
+            <input asp-for="Localisation" disabled class="form-control" />
+
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <button type="submit" class="btn btn-danger form-control">Suprimer</button>
+            </div>
+            <div class="col-6">
+                <a asp-controller="Avion" asp-action="Index" class="btn btn-outline-secondary form-control">
+                    Retour
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+</form>

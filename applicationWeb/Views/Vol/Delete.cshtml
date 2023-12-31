@@ -1,0 +1,72 @@
+﻿@model Vol
+
+
+
+
+<form method="post">
+    <input asp-for="Numvol" hidden /> 
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Suprimer  Un Vol</h2>
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Numvol" class="p-0"></label>
+            <input asp-for="Numvol" class="form-control" />
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Numpilote" class="p-0"></label>
+            <input asp-for="Numpilote" class="form-control" />
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Numavion" class="p-0"></label>
+            <input asp-for="Numavion" class="form-control" />
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Villedep" class="p-0"></label>
+            <input asp-for="Villedep" class="form-control" />
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Villearr" class="p-0"></label>
+            <input asp-for="Villearr" class="form-control" />
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Heuredep" class="p-0"></label>
+            <input asp-for="Heuredep" class="form-control" />
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Heurearr" class="p-0"></label>
+            <input asp-for="Heurearr" class="form-control" />
+
+        </div>
+        
+
+        <div class="row">
+            <div class="col-6">
+                <button type="submit" class="btn btn-danger form-control">Suprimer</button>
+            </div>
+            <div class="col-6">
+                <a asp-controller="Vol" asp-action="Index" class="btn btn-outline-secondary form-control">
+                    Retour
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+</form>

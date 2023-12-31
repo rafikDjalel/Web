@@ -1,0 +1,185 @@
+﻿@model List<Vol>
+
+
+@if(TempData["success"] != null)
+{
+    <div id="successMessage" class="alert alert-success" role="alert">
+        <h2>@TempData["success"]</h2>
+    </div>
+}
+ <div class="row pt-4 pb-3">
+
+        <div class="col-6">
+            <h2 class="text-primary">
+                Liste Des Vols
+            </h2>
+
+        </div>
+        <div class="col-6  text-end">
+            <a asp-controller="Vol"  asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> Ajouter Un Vol
+            </a>
+
+        </div>
+        <div class="row pt-4 pb-3">
+            <div class="col-6 mb-3">
+                <input type="text" id="filtreNumeroAvion" placeholder="Entrer le Numero d'avion" class="form-control" style="display: inline-block; width: auto;" />
+                <button id="btnFiltrere" class="btn btn-primary">Filtrer</button>
+            </div>
+            <div class="col-6 mb-3">
+                <input type="text" id="filtreNumeroPilote" placeholder="Entrer le Numero  Pilote" class="form-control" style="display: inline-block; width: auto;" />
+                <button id="btnFiltrer" class="btn btn-primary">Filtrer</button>
+            </div>
+        </div>
+    
+
+
+
+  </div>
+
+
+
+<table class="table table-bordered table-striped">
+    
+    <thead>
+    <tr>
+        <th>
+            Numero Vol
+
+
+
+        </th>
+        <th>
+
+             Numero Pilote
+
+
+        </th>
+        <th>
+            Numero Avion
+
+
+
+        </th>
+            <th>
+                Ville Depart
+
+
+
+            </th>
+            <th>
+                Ville Arrivée
+
+
+
+            </th>
+            <th>
+               Heure Depart
+
+
+
+            </th>
+            <th>
+                Heure Arrivée
+
+
+
+            </th>
+        
+        <th></th>
+
+
+
+
+
+    </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var obj in Model){
+        <tr>
+            <td>@obj.Numvol</td>
+            
+            <td>@obj.Numpilote</td>
+            <td>@obj.Numavion</td>
+            <td>@obj.Villedep</td>
+            <td>@obj.Villearr</td>
+            <td>@obj.Heuredep</td>
+            <td>@obj.Heurearr</td>
+            
+           
+            <td>
+                <div class="w-75 btn-group" role="group">
+                    <a asp-controller="Vol" asp-action="Edit" asp-route-id="@obj.Numvol" class="btn btn-primary mx-2">
+                            <i class="bi bi-pencil"></i>Modifier
+                    </a>
+                        <a asp-controller="Vol" asp-action="Delete" asp-route-id="@obj.Numvol" class="btn btn-danger mx-2">
+                            <i class="bi bi-trash"></i>Suprimer
+                        </a>
+
+                </div>
+            </td>
+        
+        
+        
+        </tr>
+
+        }
+
+
+    </tbody>
+
+
+</table>
+
+
+@section scripts {
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const btnFiltrer = document.getElementById('btnFiltrere');
+            btnFiltrer.addEventListener('click', function () {
+                const term = document.getElementById('filtreNumeroAvion').value.trim();
+                const rows = document.querySelectorAll('table tbody tr');
+
+                rows.forEach(row => {
+                    const adressePilote = row.querySelector('td:nth-child(3)').textContent.trim();
+                    if (adressePilote === term) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const btnFiltrer = document.getElementById('btnFiltrer');
+            btnFiltrer.addEventListener('click', function () {
+                const term = document.getElementById('filtreNumeroPilote').value.trim();
+                const rows = document.querySelectorAll('table tbody tr');
+
+                rows.forEach(row => {
+                    const adressePilote = row.querySelector('td:nth-child(2)').textContent.trim();
+                    if (adressePilote === term) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        $(document).ready(function () {
+
+            if ($('#successMessage').length) {
+                setTimeout(function () {
+                    $('#successMessage').fadeOut();
+                }, 3000);
+            }
+        });
+    </script>
+}
+
+</section>
+
+

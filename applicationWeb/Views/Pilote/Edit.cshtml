@@ -1,0 +1,53 @@
+﻿@model Pilote
+<h1>Edit</h1>
+
+
+
+<form method="post">
+     <input asp-for="Numpilote" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Modifier Un Avion</h2>
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Numpilote" class="p-0"></label>
+            <input asp-for="Numpilote" class="form-control" />
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Nompilote" class="p-0"></label>
+            <input asp-for="Nompilote" class="form-control" />
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Adresse" class="p-0"></label>
+            <input asp-for="Adresse" class="form-control" />
+
+        </div>
+        
+
+        <div class="row">
+            <div class="col-6">
+                <button type="submit" class="btn btn-primary form-control">Modifier</button>
+            </div>
+            <div class="col-6">
+                <a asp-controller="Pilote" asp-action="Index" class="btn btn-outline-secondary form-control">
+                    Retour
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+</form>
+

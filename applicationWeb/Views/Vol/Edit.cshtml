@@ -1,0 +1,79 @@
+﻿@model Vol
+<h1>Edit</h1>
+
+
+
+<form method="post">
+     <input asp-for="Numvol" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Modifier Un Vol</h2>
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Numvol" class="p-0"></label>
+            <input asp-for="Numvol" class="form-control" />
+
+        </div>
+        <div class="mb-3 row p-1">
+            <div class="form-group">
+                <label asp-for="Numpilote" class="control-label"></label>
+                <select asp-for="Numpilote" class="form-control" asp-items="ViewBag.PiloteList"></select>
+                <span asp-validation-for="Numpilote" class="text-danger"></span>
+            </div>
+
+        </div>
+        <div class="mb-3 row p-1">
+            <div class="form-group">
+                <label asp-for="Numavion" class="control-label"></label>
+                <select asp-for="Numavion" class="form-control" asp-items="ViewBag.AvionList"></select>
+                <span asp-validation-for="Numavion" class="text-danger"></span>
+            </div>
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Villedep" class="p-0"></label>
+            <input asp-for="Villedep" class="form-control" />
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Villearr" class="p-0"></label>
+            <input asp-for="Villearr" class="form-control" />
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Heuredep" class="p-0"></label>
+            <input asp-for="Heuredep" class="form-control" />
+
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Heurearr" class="p-0"></label>
+            <input asp-for="Heurearr" class="form-control" />
+
+        </div>
+        
+
+        <div class="row">
+            <div class="col-6">
+                <button type="submit" class="btn btn-primary form-control">Modifier</button>
+            </div>
+            <div class="col-6">
+                <a asp-controller="Vol" asp-action="Index" class="btn btn-outline-secondary form-control">
+                    Retour
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+</form>
+
